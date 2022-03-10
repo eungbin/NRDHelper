@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
+import Main from './components/Main';
 
 interface Props {}
 
@@ -10,7 +11,9 @@ const App = ({  }: Props) => {
     <BrowserRouter>
       <div className="container">
         <Header />
-        <h1>Hello, World!</h1>
+        <Routes>
+          <Route path="/" element={<Main />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );
