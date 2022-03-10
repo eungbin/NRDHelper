@@ -1,0 +1,32 @@
+.menu {
+  height: 3.5rem;
+  /*     드래그 방지      */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* ***************** */
+}
+
+.menu-item {
+  display: inline-block;
+  width: 100%;
+  font-size: 1em;
+  font-style: bold;
+  line-height: 3.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  color: #2B3A46;
+}
+
+.menu-item:hover {
+  /* background-color: #cdfff3; */
+  background-color: #d8c7cb;
+}
+
+.menu-item:active,
+.menu-item.active {
+  background-color: #cebec2;
+}
