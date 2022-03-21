@@ -1,5 +1,7 @@
 .mainContainer {
   text-align: center;
+  justify-content: space-between;
+  display: flex;
 }
 
 .cardView {

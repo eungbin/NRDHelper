@@ -12,7 +12,7 @@ const App = ({  }: Props) => {
       <div className="container">
         <Header />
         <Routes>
-          <Route path="/" element={<Main />} />
+            <Route path="/" element={<Main />} />
         </Routes>
       </div>
     </BrowserRouter>

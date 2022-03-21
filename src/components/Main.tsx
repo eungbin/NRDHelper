@@ -3,10 +3,14 @@ import '../css/Main.css';
 
 const Main = () => {
   return (
-    <div className="mainContainer">
+    <>
       <h1>팀 정하기 페이지</h1>
-      <div className="cardView">선택지입니다.</div>
-    </div>
+      <div className="mainContainer">
+        <div className="cardView">선택지1번</div>
+        <div className="cardView">선택지2번</div>
+        <div className="cardView">선택지3번</div>
+      </div>
+    </>
   );
 };
 
