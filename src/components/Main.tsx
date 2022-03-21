@@ -3,7 +3,9 @@ import '../css/Main.css';
 
 const Main = () => {
   return (
-    <div>Main</div>
+    <div>
+      Main Page
+    </div>
   );
 };
 
