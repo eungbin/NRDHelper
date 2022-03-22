@@ -14,8 +14,8 @@ interface ButtonProps {
 
 export default function Button({width, height, color, text, hColor, aColor, onClick, id}: ButtonProps) {
   return (
-    <CustomButton width={width} height={height} color={color} hColor={hColor} aColor={aColor}>
-      <span id={id} onClick={onClick} style={{width:"100%", textAlign:"center"}}>{text}</span>
+    <CustomButton width={width} height={height} color={color} hColor={hColor} aColor={aColor} onClick={onClick}>
+      <span id={id} style={{width:"100%", textAlign:"center"}}>{text}</span>
     </CustomButton>
   )
 }

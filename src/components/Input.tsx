@@ -5,13 +5,12 @@ interface InputProps {
   width: string;
   height: string;
   id?: string;
+  onChange?: (e: any) => void;
 }
 
-export default function Input({width, height, id}: InputProps) {
+export default function Input({width, height, id, onChange}: InputProps) {
   return (
-    <CustomInput width={width} height={height} id={id}>
-      {/* <span id={id} style={{width:"100%", textAlign:"center"}}></span> */}
-    </CustomInput>
+    <CustomInput type="text" width={width} height={height} id={id} onChange={onChange} />
   )
 }
 
