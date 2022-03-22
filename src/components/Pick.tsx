@@ -4,7 +4,7 @@ import '../css/Pick.css';
 const Pick = () => {
   return (
     <>
-
+      PICK!!!!!!!@@
     </>
   );
 };
