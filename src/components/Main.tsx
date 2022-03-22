@@ -1,14 +1,15 @@
 import React from 'react';
 import '../css/Main.css';
+import Cardview from './Cardview';
 
 const Main = () => {
   return (
     <>
       <h1>팀 정하기 페이지</h1>
       <div className="mainContainer">
-        <div className="cardView">선택지1번</div>
-        <div className="cardView">선택지2번</div>
-        <div className="cardView">선택지3번</div>
+        <Cardview width={"250px"} height={"250px"} innerText={"선택지1"} />
+        <Cardview width={"250px"} height={"250px"} innerText={"선택지2"} />
+        <Cardview width={"250px"} height={"250px"} innerText={"선택지3"} />
       </div>
     </>
   );
