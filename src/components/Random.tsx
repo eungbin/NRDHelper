@@ -9,7 +9,7 @@ const Random = () => {
 
   return (
     <div className="randomContainer">
-      
+      TEST
     </div>
   );
 };
