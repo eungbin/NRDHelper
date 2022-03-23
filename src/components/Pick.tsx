@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import '../css/Pick.css';
 import Button from './Button';
 import Input from './Input';
+import { useNavigate } from 'react-router-dom';
 
 const Pick = () => {
   const [users, setUsers] = useState({
     user1: "",
     user2: "",
   });
+
+  const navigate = useNavigate();
 
   const onChangeUsers = (e) => {
     if(e.target.id === "firstUser") {
@@ -22,6 +25,9 @@ const Pick = () => {
       alert("첫 번째 유저를 입력해 주세요.");
     } else if(users.user2 === "") {
       alert("두 번째 유저를 입력해 주세요.");
+    } else {
+      console.log(users);
+      navigate("/random", {state: users});
     }
   }
 
