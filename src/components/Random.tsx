@@ -11,11 +11,19 @@ const Random = () => {
   const location = useLocation();
   const users = location.state as props   // 그냥 location.state.user1로 사용할 경우 에러 발생
 
-  console.log(location.state);
+  const randomNum = Math.floor(Math.random()*2+1);
+  let pickedUser = "";
+
+  if(randomNum === 1) {
+    pickedUser = users.user1;
+  } else {
+    pickedUser = users.user2;
+  }
 
   return (
     <div className="randomContainer">
       {users.user1}
+      {users.user2}
     </div>
   );
 };
