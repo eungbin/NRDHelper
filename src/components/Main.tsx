@@ -23,11 +23,27 @@ const Main = () => {
           </Grid>
           <Grid item xs={0.5}></Grid>
           <Grid item xs={3}>
-            <Cardview width={"240px"} height={"150px"} paddingTop={"70px"} innerText={"선택지2"} />
+            <Cardview width={"240px"} height={"150px"} paddingTop={"70px"} innerText={"마에보"} />
           </Grid>
           <Grid item xs={0.5}></Grid>
           <Grid item xs={3}>
-            <Cardview width={"240px"} height={"150px"} paddingTop={"70px"} innerText={"선택지2"} />
+            <Cardview width={"240px"} height={"150px"} paddingTop={"70px"} innerText={"물에보"} />
+          </Grid>
+          <Grid item xs={1}></Grid>
+
+          <Grid item xs={1}></Grid>
+          <Grid item xs={3}>
+            <Link to="/holding">
+              <Cardview width={"240px"} height={"150px"} paddingTop={"70px"} innerText={"마법라인"} />
+            </Link>
+          </Grid>
+          <Grid item xs={0.5}></Grid>
+          <Grid item xs={3}>
+            <Cardview width={"240px"} height={"150px"} paddingTop={"70px"} innerText={"물리라인"} />
+          </Grid>
+          <Grid item xs={0.5}></Grid>
+          <Grid item xs={3}>
+            <Cardview width={"240px"} height={"150px"} paddingTop={"70px"} innerText={"방깎"} />
           </Grid>
           <Grid item xs={1}></Grid>
 
