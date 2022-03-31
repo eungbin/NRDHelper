@@ -1,8 +1,7 @@
 .mainContainer {
+  width: 1000px;
   text-align: center;
-  justify-content: space-between;
-  display: flex;
-  padding: 0px 30px;
+  margin: 0 auto;
 }
 
 h1 {

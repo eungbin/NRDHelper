@@ -1,13 +1,7 @@
 .container {
-  width: 1000px;
-  height: 700px;
+  text-align: center;
   margin: 0 auto;
   background-size: cover;
   background-color: #E0CFD3;
-  margin-top: 40px;
   color: #2B3A46;
-}
-
-.bodyContainer {
-    
 }
