@@ -21,10 +21,26 @@ const Holding = () => {
     units: normalUnits.units,
   });
 
+  const [result, setResult] = useState({
+    units: normalUnits.units,
+  });
+
   const navigate = useNavigate();
 
-  const onChangeUsers = (e) => {
+  const onChangeSearch = (e) => {
+    const keyword = e.target.value;
+    changeResult(keyword);
+    console.log(result);
+  }
 
+  const changeResult = (keyword) => {
+    const returnUnits = normal.units.filter(item => {
+      if(item.includes(keyword)) return item;
+    });
+    console.log(returnUnits);
+    setResult({
+      units: returnUnits,
+    });
   }
 
   return (
@@ -34,13 +50,13 @@ const Holding = () => {
           <Grid item xs={4}>
           </Grid>
           <Grid item xs={4}>
-            <Input width={"300px"} height={"30px"} fontSize={"20px"} id={"firstUser"} onChange={onChangeUsers} placeholder={"이름으로 검색"} />
+            <Input width={"300px"} height={"30px"} fontSize={"20px"} id={"searchUnit"} onChange={onChangeSearch} placeholder={"이름으로 검색"} />
           </Grid>
           <Grid item xs={4}>
           </Grid>
 
-          {normal.units.map((item, index) => {return (
-            <Grid item xs={6}>
+          {result.units.map((item, index) => {return (
+            <Grid key={index} item xs={6}>
               {item}
             </Grid>
           )})}
