@@ -30,14 +30,12 @@ const Holding = () => {
   const onChangeSearch = (e) => {
     const keyword = e.target.value;
     changeResult(keyword);
-    console.log(result);
   }
 
   const changeResult = (keyword) => {
     const returnUnits = normal.units.filter(item => {
       if(item.includes(keyword)) return item;
     });
-    console.log(returnUnits);
     setResult({
       units: returnUnits,
     });
