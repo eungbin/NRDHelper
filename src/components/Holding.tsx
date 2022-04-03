@@ -6,7 +6,8 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
-import normalUnits from '../../data/normal.json';
+import rareUnits from '../data/Rare.json';
+import CreateTable from './CreateTable';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -17,12 +18,12 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const Holding = () => {
-  const [normal, setNormal] = useState({
-    units: normalUnits.units,
+  const [rare, setRare] = useState({
+    units: rareUnits.units,
   });
 
   const [result, setResult] = useState({
-    units: normalUnits.units,
+    units: rareUnits.units,
   });
 
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Holding = () => {
   }
 
   const changeResult = (keyword) => {
-    const returnUnits = normal.units.filter(item => {
+    const returnUnits = rare.units.filter(item => {
       if(item.includes(keyword)) return item;
     });
     setResult({
@@ -55,7 +56,8 @@ const Holding = () => {
 
           {result.units.map((item, index) => {return (
             <Grid key={index} item xs={6}>
-              {item}
+              {item}<br />
+              <CreateTable unit={"나루토"}/>
             </Grid>
           )})}
         </Grid>
