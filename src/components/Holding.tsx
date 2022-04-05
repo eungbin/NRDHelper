@@ -19,14 +19,25 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const Holding = () => {
   const rareUnitNames = Object.keys(rareUnits);
-  
+  const normalOrMagic = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+  const 하위유닛 = rareUnitNames.map(i => {
+    return rareUnits[i]["하위"];
+  });
+
+  console.log(하위유닛);
+
   const [rare, setRare] = useState({
-    units: rareUnitNames,
+    names: rareUnitNames,
   });
 
   const [result, setResult] = useState({
-    units: rareUnitNames,
+    names: rareUnitNames,
   });
+
+  const 재료유닛얻기 = () => {
+    
+  }
 
   const navigate = useNavigate();
 
@@ -36,11 +47,11 @@ const Holding = () => {
   }
 
   const changeResult = (keyword) => {
-    const returnUnits = rare.units.filter(item => {
+    const returnUnits = rare.names.filter(item => {
       if(item.includes(keyword)) return item;
     });
     setResult({
-      units: returnUnits,
+      names: returnUnits,
     });
   }
 
@@ -56,10 +67,10 @@ const Holding = () => {
           <Grid item xs={4}>
           </Grid>
 
-          {result.units.map((item, index) => {return (
+          {result.names.map((item, index) => {return (
             <Grid key={index} item xs={6}>
               {item}<br />
-              <CreateTable unit={"나루토"}/>
+              <CreateTable units={normalOrMagic}/>
             </Grid>
           )})}
         </Grid>
