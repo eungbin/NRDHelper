@@ -18,14 +18,16 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const Holding = () => {
-  const rareUnitNames = Object.keys(rareUnits);
-  const normalOrMagic = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  const rareUnitNames: string[] = Object.keys(rareUnits);
+  const normalOrMagic: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-  const 하위유닛 = rareUnitNames.map(i => {
-    return rareUnits[i]["하위"];
-  });
+  // const 하위유닛 = rareUnitNames.map(i => {
+  //   return rareUnits[i]["하위"];
+  // });
 
-  console.log(하위유닛);
+  // console.log(하위유닛);
+
+  // console.log(재료유닛얻기())
 
   const [rare, setRare] = useState({
     names: rareUnitNames,
@@ -35,8 +37,9 @@ const Holding = () => {
     names: rareUnitNames,
   });
 
-  const 재료유닛얻기 = () => {
-    
+  const 재료유닛얻기 = (unit: string) => {
+    const 하위유닛: string[] = rareUnits[unit]["하위"];
+    console.log(하위유닛);
   }
 
   const navigate = useNavigate();
