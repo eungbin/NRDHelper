@@ -18,12 +18,14 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const Holding = () => {
+  const rareUnitNames = Object.keys(rareUnits);
+  
   const [rare, setRare] = useState({
-    units: rareUnits.units,
+    units: rareUnitNames,
   });
 
   const [result, setResult] = useState({
-    units: rareUnits.units,
+    units: rareUnitNames,
   });
 
   const navigate = useNavigate();
