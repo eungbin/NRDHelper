@@ -115,10 +115,6 @@ const 재료유닛얻기 = (unit: string) => {
       }
     }
   }
-
-  // console.log("재료유닛");
-  // console.log(재료유닛);
-  
   return 재료유닛;
 }
 
