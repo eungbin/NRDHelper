@@ -6,7 +6,10 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
+
 import rareUnits from '../data/Rare.json';
+import uniqueUnits from '../data/Unique.json';
+
 import CreateTable from './CreateTable';
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -83,7 +86,12 @@ const 유닛등급얻기 = (unit: string) => {
 }
 
 const 하위유닛얻기 = (unit: string) => {
-  const 하위유닛: string[] = rareUnits[unit]["하위"];
+  const 유닛등급: string = 유닛등급얻기(unit);
+  let 하위유닛: string[];
+
+  if(유닛등급 === "레어") 하위유닛 = rareUnits[unit]["하위"];
+  else if(유닛등급 === "유니크") 하위유닛 = uniqueUnits[unit]["하위"];
+
   return 하위유닛;
 }
 
@@ -118,7 +126,7 @@ const Holding = () => {
   const rareUnitNames: string[] = Object.keys(rareUnits);
   const normalOrMagic: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-  console.log(재료유닛얻기('가마켄[레어]'));
+  console.log(재료유닛얻기('가아라[유니크]'));
 
   const [rare, setRare] = useState({
     names: rareUnitNames,
