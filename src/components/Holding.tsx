@@ -63,7 +63,7 @@ const 노말혹은매직 = (unit: string) => {
     case "지라이야[매직]":
       index = 12;
       break;
-    case "제츠[매직":
+    case "제츠[매직]":
       index = 13;
       break;
     case "츠나데[매직]":
@@ -104,6 +104,8 @@ const 재료유닛얻기 = (unit: string) => {
     하위유닛 = 하위유닛얻기(unit);
   }
 
+  console.log(하위유닛);
+
   for(let i=0; i<하위유닛.length; i++) {
     let index = 노말혹은매직(하위유닛[i]);
     if(index !== -1) {
@@ -122,7 +124,7 @@ const Holding = () => {
   const rareUnitNames: string[] = Object.keys(rareUnits);
   const normalOrMagic: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-  console.log(재료유닛얻기('가아라[유니크]'));
+  console.log(재료유닛얻기('데이다라[유니크]'));
 
   const [rare, setRare] = useState({
     names: rareUnitNames,
