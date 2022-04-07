@@ -2,6 +2,7 @@ import rareUnits from '../data/Rare.json';
 import uniqueUnits from '../data/Unique.json';
 import hiddenUnits from '../data/Hidden.json';
 import legendUnits from '../data/Legend.json';
+import injuryeokUnits from '../data/Injuryeok.json';
 
 const 노말혹은매직 = (unit: string) => {
   let index: number = -1;
@@ -76,6 +77,7 @@ const 하위유닛얻기 = (unit: string) => {
   else if(유닛등급 === "유니크") 하위유닛 = uniqueUnits[unit]["하위"];
   else if(유닛등급 === "히든") 하위유닛 = hiddenUnits[unit]["하위"];
   else if(유닛등급 === "전설") 하위유닛 = legendUnits[unit]["하위"];
+  else if(유닛등급 === "인주력") 하위유닛 = injuryeokUnits[unit]["하위"];
 
   return 하위유닛;
 }
@@ -107,3 +109,4 @@ export const 레어유닛이름: string[] = Object.keys(rareUnits);
 export const 유니크유닛이름: string[] = Object.keys(uniqueUnits);
 export const 히든유닛이름: string[] = Object.keys(hiddenUnits);
 export const 전설유닛이름: string[] = Object.keys(legendUnits);
+export const 인주력유닛이름: string[] = Object.keys(injuryeokUnits);

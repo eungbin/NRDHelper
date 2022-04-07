@@ -9,7 +9,7 @@ import { styled } from '@mui/material/styles';
 
 import CreateTable from './CreateTable';
 
-import { 재료유닛얻기, 히든유닛이름, 전설유닛이름 } from '../libs/GetCraftData';
+import { 재료유닛얻기, 히든유닛이름, 전설유닛이름, 인주력유닛이름 } from '../libs/GetCraftData';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -20,7 +20,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const Holding = () => {
-  const rareUnitNames: string[] = 전설유닛이름;
+  const rareUnitNames: string[] = 인주력유닛이름;
 
   const [rare, setRare] = useState({
     names: rareUnitNames,
