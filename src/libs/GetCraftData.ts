@@ -5,6 +5,9 @@ import legendUnits from '../data/Legend.json';
 import injuryeokUnits from '../data/Injuryeok.json';
 import misuUnits from '../data/Misu.json';
 import eliteUnits from '../data/Elite.json';
+import limitUnits from '../data/limit.json';
+import epicUnits from '../data/Epic.json';
+import infinityUnits from '../data/infinity.json';
 
 const 노말혹은매직 = (unit: string) => {
   let index: number = -1;
@@ -61,6 +64,9 @@ const 노말혹은매직 = (unit: string) => {
     case "쵸지[매직]":
       index = 16;
       break;
+    case "토비[스페셜]":
+      index = 17;
+      break;
   }
 
   return index;
@@ -75,6 +81,8 @@ const 하위유닛얻기 = (unit: string) => {
   const 유닛등급: string = 유닛등급얻기(unit);
   let 하위유닛: string[];
 
+  console.log(unit);
+
   if(유닛등급 === "레어") 하위유닛 = rareUnits[unit]["하위"];
   else if(유닛등급 === "유니크") 하위유닛 = uniqueUnits[unit]["하위"];
   else if(유닛등급 === "히든") 하위유닛 = hiddenUnits[unit]["하위"];
@@ -82,16 +90,21 @@ const 하위유닛얻기 = (unit: string) => {
   else if(유닛등급 === "인주력") 하위유닛 = injuryeokUnits[unit]["하위"];
   else if(유닛등급 === "미수") 하위유닛 = misuUnits[unit]["하위"];
   else if(유닛등급 === "엘리트") 하위유닛 = eliteUnits[unit]["하위"];
+  else if(유닛등급 === "리미트") 하위유닛 = limitUnits[unit]["하위"];
+  else if(유닛등급 === "에픽") 하위유닛 = epicUnits[unit]["하위"];
+  else if(유닛등급 === "인피니티") 하위유닛 = infinityUnits[unit]["하위"];
+
+  console.log(하위유닛);
 
   return 하위유닛;
 }
 
 export const 재료유닛얻기 = (unit: string) => {
-  let 재료유닛: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let 재료유닛: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   const 베이스유닛등급: string = 유닛등급얻기(unit);
   let 하위유닛: string[];
 
-  if(베이스유닛등급 !== "노말" && 베이스유닛등급 !== "매직") {
+  if(베이스유닛등급 !== "노말" && 베이스유닛등급 !== "매직" && 베이스유닛등급 !== "스페셜") {
     하위유닛 = 하위유닛얻기(unit);
   }
 
@@ -116,3 +129,6 @@ export const 전설유닛이름: string[] = Object.keys(legendUnits);
 export const 인주력유닛이름: string[] = Object.keys(injuryeokUnits);
 export const 미수유닛이름: string[] = Object.keys(misuUnits);
 export const 엘리트유닛이름: string[] = Object.keys(eliteUnits);
+export const 리미트유닛이름: string[] = Object.keys(limitUnits);
+export const 에픽유닛이름: string[] = Object.keys(epicUnits);
+export const 인피니티유닛이름: string[] = Object.keys(infinityUnits);

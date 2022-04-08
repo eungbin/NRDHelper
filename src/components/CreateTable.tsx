@@ -58,7 +58,7 @@ export default function CreateTable({units}: IcreateTable) {
           <td>토비</td>
           <td>{units[17]}</td>
           <td>목재</td>
-          <td></td>
+          <td>{units[18]}</td>
         </tr>
       </tbody>
     </CustomTable>
