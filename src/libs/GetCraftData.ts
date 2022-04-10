@@ -9,6 +9,16 @@ import limitUnits from '../data/limit.json';
 import epicUnits from '../data/Epic.json';
 import infinityUnits from '../data/infinity.json';
 
+const 목재인가 = (unit: string) => {
+  const isMok = unit.substring(0, 2);
+
+  if(isMok === "목재") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 const 노말혹은매직 = (unit: string) => {
   let index: number = -1;
 
@@ -105,13 +115,19 @@ export const 재료유닛얻기 = (unit: string) => {
   }
 
   for(let i=0; i<하위유닛.length; i++) {
-    let index = 노말혹은매직(하위유닛[i]);
-    if(index !== -1) {
-      재료유닛[index] += 1;
+    const isMok: boolean = 목재인가(하위유닛[i]);
+    if(isMok) {
+      const amount: number = Number.parseInt(하위유닛[i].substring(2, 3));
+      재료유닛[18] += amount;
     } else {
-      let 하위재료유닛 = 재료유닛얻기(하위유닛[i]);
-      for(let j=0; j<하위재료유닛.length; j++) {
-        재료유닛[j] += 하위재료유닛[j];
+      let index = 노말혹은매직(하위유닛[i]);
+      if(index !== -1) {
+        재료유닛[index] += 1;
+      } else {
+        let 하위재료유닛 = 재료유닛얻기(하위유닛[i]);
+        for(let j=0; j<하위재료유닛.length; j++) {
+          재료유닛[j] += 하위재료유닛[j];
+        }
       }
     }
   }
