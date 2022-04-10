@@ -37,12 +37,19 @@ const data = (keyword: string) => {
   
   if(keyword === "all") {
     return totalKeys;
-  }
-  else {
+  } else if(keyword === "마딜") {
+    const keywordUnits = totalKeys.filter(v => {
+      if(키워드(v).includes(keyword)) {
+        if(!(키워드(v).includes("보딜"))) {
+          return v;
+        }
+      }
+    });
+    return keywordUnits;
+  } else {
     const keywordUnits = totalKeys.filter(v => {
       if(키워드(v).includes(keyword)) return v;
     });
-
     return keywordUnits;
   }
 }

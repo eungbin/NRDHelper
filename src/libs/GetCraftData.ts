@@ -72,7 +72,7 @@ const 노말혹은매직 = (unit: string) => {
   return index;
 }
 
-const 유닛등급얻기 = (unit: string) => {
+export const 유닛등급얻기 = (unit: string) => {
   const 등급: string = unit.substring(unit.indexOf("[")+1, unit.indexOf("]"));
   return 등급;
 }
