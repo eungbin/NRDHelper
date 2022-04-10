@@ -3,7 +3,7 @@ import './App.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
 import Main from './components/Main';
-import Holding from './components/Holding';
+import Units from './components/Units';
 import Random from './components/Random';
 
 interface Props {}
@@ -15,7 +15,7 @@ const App = ({  }: Props) => {
         <Header />
         <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/holding" element={<Holding />} />
+            <Route path="/units" element={<Units />} />
             <Route path="/random" element={<Random />} />
         </Routes>
       </div>

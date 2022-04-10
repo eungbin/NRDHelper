@@ -17,13 +17,15 @@ const Main = () => {
 
           <Grid item xs={1}></Grid>
           <Grid item xs={3}>
-            <Link to="/holding">
+            <Link to="/units" state={"메홀"}>
               <Cardview width={"240px"} height={"150px"} paddingTop={"70px"} innerText={"홀딩"} />
             </Link>
           </Grid>
           <Grid item xs={0.5}></Grid>
           <Grid item xs={3}>
-            <Cardview width={"240px"} height={"150px"} paddingTop={"70px"} innerText={"마에보"} />
+            <Link to="/units" state={"보딜"}>
+              <Cardview width={"240px"} height={"150px"} paddingTop={"70px"} innerText={"마에보"} />
+            </Link>
           </Grid>
           <Grid item xs={0.5}></Grid>
           <Grid item xs={3}>
@@ -44,6 +46,14 @@ const Main = () => {
           <Grid item xs={0.5}></Grid>
           <Grid item xs={3}>
             <Cardview width={"240px"} height={"150px"} paddingTop={"70px"} innerText={"방깎"} />
+          </Grid>
+          <Grid item xs={1}></Grid>
+
+          <Grid item xs={1}></Grid>
+          <Grid item xs={3}>
+            <Link to="/units" state={"all"}>
+              <Cardview width={"240px"} height={"150px"} paddingTop={"70px"} innerText={"전체"} />
+            </Link>
           </Grid>
           <Grid item xs={1}></Grid>
 

@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import '../css/Holding.css';
+import '../css/Units.css';
 import Input from './Input';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 
 import CreateTable from './CreateTable';
-import { totalData } from '../libs/totalData';
+import { getUnitNames } from '../libs/totalData';
 
-import { 재료유닛얻기, 히든유닛이름, 전설유닛이름, 인주력유닛이름, 미수유닛이름, 엘리트유닛이름,
-리미트유닛이름, 에픽유닛이름, 인피니티유닛이름 } from '../libs/GetCraftData';
+import { 재료유닛얻기 } from '../libs/GetCraftData';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -22,17 +21,18 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const Holding = () => {
-  const rareUnitNames: string[] = totalData;
+  const location = useLocation();
+  const keyword = location.state;
 
-  const [rare, setRare] = useState({
-    names: rareUnitNames,
+  const unitNames: string[] = getUnitNames(keyword);
+
+  const [totalUnits, setTotalUnits] = useState({
+    names: unitNames,
   });
 
   const [result, setResult] = useState({
-    names: rareUnitNames,
+    names: unitNames,
   });
-
-  const navigate = useNavigate();
 
   const onChangeSearch = (e) => {
     const keyword = e.target.value;
@@ -40,7 +40,7 @@ const Holding = () => {
   }
 
   const changeResult = (keyword) => {
-    const returnUnits = rare.names.filter(item => {
+    const returnUnits = totalUnits.names.filter(item => {
       if(item.includes(keyword)) return item;
     });
     setResult({

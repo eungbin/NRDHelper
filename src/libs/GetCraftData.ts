@@ -118,13 +118,20 @@ export const 재료유닛얻기 = (unit: string) => {
   return 재료유닛;
 }
 
-export const 레어유닛이름: string[] = Object.keys(rareUnits);
-export const 유니크유닛이름: string[] = Object.keys(uniqueUnits);
-export const 히든유닛이름: string[] = Object.keys(hiddenUnits);
-export const 전설유닛이름: string[] = Object.keys(legendUnits);
-export const 인주력유닛이름: string[] = Object.keys(injuryeokUnits);
-export const 미수유닛이름: string[] = Object.keys(misuUnits);
-export const 엘리트유닛이름: string[] = Object.keys(eliteUnits);
-export const 리미트유닛이름: string[] = Object.keys(limitUnits);
-export const 에픽유닛이름: string[] = Object.keys(epicUnits);
-export const 인피니티유닛이름: string[] = Object.keys(infinityUnits);
+export const 키워드 = (unit: string) => {
+  const 유닛등급: string = 유닛등급얻기(unit);
+  let 유닛설명: string;
+
+  if(유닛등급 === "레어") 유닛설명 = rareUnits[unit]["설명"];
+  else if(유닛등급 === "유니크") 유닛설명 = uniqueUnits[unit]["설명"];
+  else if(유닛등급 === "히든") 유닛설명 = hiddenUnits[unit]["설명"];
+  else if(유닛등급 === "전설") 유닛설명 = legendUnits[unit]["설명"];
+  else if(유닛등급 === "인주력") 유닛설명 = injuryeokUnits[unit]["설명"];
+  else if(유닛등급 === "미수") 유닛설명 = misuUnits[unit]["설명"];
+  else if(유닛등급 === "엘리트") 유닛설명 = eliteUnits[unit]["설명"];
+  else if(유닛등급 === "리미트") 유닛설명 = limitUnits[unit]["설명"];
+  else if(유닛등급 === "에픽") 유닛설명 = epicUnits[unit]["설명"];
+  else if(유닛등급 === "인피니티") 유닛설명 = infinityUnits[unit]["설명"];
+
+  return 유닛설명;
+}

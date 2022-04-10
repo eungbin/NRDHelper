@@ -9,7 +9,9 @@ import limitUnits from '../data/limit.json';
 import epicUnits from '../data/Epic.json';
 import infinityUnits from '../data/infinity.json';
 
-const data = () => {
+import { 키워드 } from './GetCraftData';
+
+const data = (keyword: string) => {
   const totalKeys: string[] = [];
   const rareKeys: string[] = Object.keys(rareUnits);
   const uniqueKeys: string[] = Object.keys(uniqueUnits);
@@ -33,7 +35,16 @@ const data = () => {
   getAllKeys(epicKeys, totalKeys);
   getAllKeys(infinityKeys, totalKeys);
   
-  return totalKeys;
+  if(keyword === "all") {
+    return totalKeys;
+  }
+  else {
+    const keywordUnits = totalKeys.filter(v => {
+      if(키워드(v).includes(keyword)) return v;
+    });
+
+    return keywordUnits;
+  }
 }
 
 const getAllKeys = (units: string[], arrays: string[]) => {
@@ -42,4 +53,6 @@ const getAllKeys = (units: string[], arrays: string[]) => {
   }
 }
 
-export const totalData: string[] = data();
+export const getUnitNames = (keyword: any) => {
+  return data(keyword);
+}
