@@ -20,5 +20,7 @@ const Card = styled.div<{ width: string, height: string, paddingTop: string}>`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   padding-top: ${(props) => props.paddingTop};
-  background-color: aqua;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 3px 3px 5px 5px gray;
 `;

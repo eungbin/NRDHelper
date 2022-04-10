@@ -2,6 +2,9 @@
   text-align: center;
   margin: 0 auto;
   background-size: cover;
-  background-color: #E0CFD3;
   color: #2B3A46;
+}
+
+body {
+  background-color: #d3d3d3;
 }
