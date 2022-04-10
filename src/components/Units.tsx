@@ -23,6 +23,22 @@ const Item = styled(Paper)(({ theme }) => ({
 const Holding = () => {
   const location = useLocation();
   const keyword = location.state;
+  let tableSize: number = 0;
+
+  let browserSize = {
+    width: window.innerWidth || document.body.clientWidth,
+    height: window.innerHeight || document.body.clientHeight
+  };
+
+  if(browserSize.width >= 1600) {
+    tableSize = 3;
+  } else if(browserSize.width >= 1200) {
+    tableSize = 4;
+  } else {
+    tableSize = 6;
+  }
+
+  console.log(browserSize);
 
   const unitNames: string[] = getUnitNames(keyword);
 
@@ -61,7 +77,7 @@ const Holding = () => {
           </Grid>
 
           {result.names.map((item, index) => {return (
-            <Grid key={index} item xs={6}>
+            <Grid key={index} item xs={tableSize}>
               {item}<br />
               <CreateTable units={재료유닛얻기(item)}/>
             </Grid>

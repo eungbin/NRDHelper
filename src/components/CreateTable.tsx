@@ -67,10 +67,15 @@ export default function CreateTable({units}: IcreateTable) {
 
 const CustomTable = styled.table<{}>`
   font-size: 12px;
-  background-color: aqua;
+  background-color: white;
   margin: 0 auto;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border-radius: 10px 10px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  padding: 5px;
+  box-shadow: 2px 2px 4px 4px gray;
 `;

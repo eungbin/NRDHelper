@@ -38,4 +38,5 @@ const CustomInput = styled.input<{ width: string, height: string, fontSize:strin
   -ms-user-select: none;
   user-select: none;
   padding-left: 10px;
+  margin-top: 20px;
 `;
