@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/Units.css';
 import Input from './Input';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -20,25 +20,28 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
+let browserSize = {
+  width: window.innerWidth || document.body.clientWidth,
+  height: window.innerHeight || document.body.clientHeight
+};
+
+let initSize: number;
+
+if(browserSize.width >= 1600) {
+  initSize = 3;
+} else if(browserSize.width >= 1200) {
+  initSize = 4;
+} else if(browserSize.width >= 760) {
+  initSize = 6;
+} else {
+  initSize = 12;
+}
+
 const Holding = () => {
   const location = useLocation();
   const keyword = location.state;
-  let tableSize: number = 0;
 
-  let browserSize = {
-    width: window.innerWidth || document.body.clientWidth,
-    height: window.innerHeight || document.body.clientHeight
-  };
-
-  if(browserSize.width >= 1600) {
-    tableSize = 3;
-  } else if(browserSize.width >= 1200) {
-    tableSize = 4;
-  } else {
-    tableSize = 6;
-  }
-
-  console.log(browserSize);
+  const [tableSize, setTableSize] = useState(initSize);
 
   const unitNames: string[] = getUnitNames(keyword);
 
@@ -48,6 +51,32 @@ const Holding = () => {
 
   const [result, setResult] = useState({
     names: unitNames,
+  });
+
+  const getSize = () => {
+    browserSize.width = window.innerWidth || document.body.clientWidth;
+    browserSize.height = window.innerHeight || document.body.clientHeight;
+
+    if(browserSize.width >= 1600) {
+      setTableSize(3);
+      initSize = 3;
+    } else if(browserSize.width >= 1200) {
+      setTableSize(4);
+      initSize = 4;
+    } else if(browserSize.width >= 760) {
+      setTableSize(6);
+      initSize = 6;
+    } else {
+      setTableSize(12);
+      initSize = 12;
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', getSize);
+    return() => {
+      window.removeEventListener('resize', getSize);
+    }
   });
 
   const onChangeSearch = (e) => {
