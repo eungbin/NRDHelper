@@ -81,8 +81,6 @@ const 하위유닛얻기 = (unit: string) => {
   const 유닛등급: string = 유닛등급얻기(unit);
   let 하위유닛: string[];
 
-  console.log(unit);
-
   if(유닛등급 === "레어") 하위유닛 = rareUnits[unit]["하위"];
   else if(유닛등급 === "유니크") 하위유닛 = uniqueUnits[unit]["하위"];
   else if(유닛등급 === "히든") 하위유닛 = hiddenUnits[unit]["하위"];
@@ -93,8 +91,6 @@ const 하위유닛얻기 = (unit: string) => {
   else if(유닛등급 === "리미트") 하위유닛 = limitUnits[unit]["하위"];
   else if(유닛등급 === "에픽") 하위유닛 = epicUnits[unit]["하위"];
   else if(유닛등급 === "인피니티") 하위유닛 = infinityUnits[unit]["하위"];
-
-  console.log(하위유닛);
 
   return 하위유닛;
 }

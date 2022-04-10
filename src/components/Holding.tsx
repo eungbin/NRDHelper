@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 
 import CreateTable from './CreateTable';
+import { totalData } from '../libs/totalData';
 
 import { 재료유닛얻기, 히든유닛이름, 전설유닛이름, 인주력유닛이름, 미수유닛이름, 엘리트유닛이름,
 리미트유닛이름, 에픽유닛이름, 인피니티유닛이름 } from '../libs/GetCraftData';
@@ -21,7 +22,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const Holding = () => {
-  const rareUnitNames: string[] = 인피니티유닛이름;
+  const rareUnitNames: string[] = totalData;
 
   const [rare, setRare] = useState({
     names: rareUnitNames,
