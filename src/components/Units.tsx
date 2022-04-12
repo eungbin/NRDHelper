@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../css/Units.css';
 import Input from './Input';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
@@ -19,23 +19,6 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: 'center',
   color: theme.palette.text.secondary,
 }));
-
-// let browserSize = {
-//   width: window.innerWidth || document.body.clientWidth,
-//   height: window.innerHeight || document.body.clientHeight
-// };
-
-// let initSize: number;
-
-// if(browserSize.width >= 1600) {
-//   initSize = 3;
-// } else if(browserSize.width >= 1200) {
-//   initSize = 4;
-// } else if(browserSize.width >= 760) {
-//   initSize = 6;
-// } else {
-//   initSize = 12;
-// }
 
 const Holding = () => {
   const location = useLocation();
