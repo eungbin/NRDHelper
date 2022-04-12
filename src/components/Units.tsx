@@ -20,26 +20,43 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-let browserSize = {
-  width: window.innerWidth || document.body.clientWidth,
-  height: window.innerHeight || document.body.clientHeight
-};
+// let browserSize = {
+//   width: window.innerWidth || document.body.clientWidth,
+//   height: window.innerHeight || document.body.clientHeight
+// };
 
-let initSize: number;
+// let initSize: number;
 
-if(browserSize.width >= 1600) {
-  initSize = 3;
-} else if(browserSize.width >= 1200) {
-  initSize = 4;
-} else if(browserSize.width >= 760) {
-  initSize = 6;
-} else {
-  initSize = 12;
-}
+// if(browserSize.width >= 1600) {
+//   initSize = 3;
+// } else if(browserSize.width >= 1200) {
+//   initSize = 4;
+// } else if(browserSize.width >= 760) {
+//   initSize = 6;
+// } else {
+//   initSize = 12;
+// }
 
 const Holding = () => {
   const location = useLocation();
   const keyword = location.state;
+
+  let browserSize = {
+    width: window.innerWidth || document.body.clientWidth,
+    height: window.innerHeight || document.body.clientHeight
+  };
+  
+  let initSize: number;
+  
+  if(browserSize.width >= 1600) {
+    initSize = 3;
+  } else if(browserSize.width >= 1200) {
+    initSize = 4;
+  } else if(browserSize.width >= 760) {
+    initSize = 6;
+  } else {
+    initSize = 12;
+  }
 
   const [tableSize, setTableSize] = useState(initSize);
 
@@ -53,10 +70,7 @@ const Holding = () => {
     names: unitNames,
   });
 
-  const getSize = () => {
-    browserSize.width = window.innerWidth || document.body.clientWidth;
-    browserSize.height = window.innerHeight || document.body.clientHeight;
-
+  const setSize = () => {
     if(browserSize.width >= 1600) {
       setTableSize(3);
       initSize = 3;
@@ -72,12 +86,27 @@ const Holding = () => {
     }
   }
 
+  const getSize = () => {
+    browserSize.width = window.innerWidth || document.body.clientWidth;
+    browserSize.height = window.innerHeight || document.body.clientHeight;
+
+    setSize();
+  }
+
   useEffect(() => {
     window.addEventListener('resize', getSize);
     return() => {
       window.removeEventListener('resize', getSize);
     }
   });
+
+  // 메인에서 브라우저 크기 변경 후 진입할 경우 변경된 브라우저 크기에 맞게 보여준다.
+  useEffect(() => {
+    browserSize.width = window.innerWidth || document.body.clientWidth,
+    browserSize.height = window.innerHeight || document.body.clientHeight
+
+    setSize();
+  }, []);
 
   const onChangeSearch = (e) => {
     const keyword = e.target.value;
