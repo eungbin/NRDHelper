@@ -10,7 +10,7 @@
 
 .menu-item {
   display: inline-block;
-  width: 100%;
+  width: 10%;
   font-size: 1em;
   font-style: bold;
   line-height: 3.5rem;
@@ -21,12 +21,18 @@
   color: #2B3A46;
 }
 
+.menu-item.home {
+  float: left;
+  font-size: 20px;
+  font-weight: 700;
+}
+
 .menu-item:hover {
   /* background-color: #cdfff3; */
-  background-color: #d8c7cb;
+  background-color: #eeeeee;
 }
 
 .menu-item:active,
 .menu-item.active {
-  background-color: #cebec2;
+  background-color: #e0e0e0;
 }
