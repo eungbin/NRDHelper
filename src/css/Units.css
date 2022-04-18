@@ -1,3 +1,47 @@
 .pickContainer {
   text-align: center;
 }
+
+.textKeyword {
+  font-size: 14px;
+}
+
+.레어 {
+  color: #673ab7;
+}
+
+.유니크 {
+  color: #ea80fc;
+}
+
+.히든 {
+  color: #4fc4f7;
+}
+
+.전설 {
+  color: #d32f2f
+}
+
+.엘리트 {
+  color: #f57c00;
+}
+
+.리미트 {
+  color: #ff7043;
+}
+
+.인주력 {
+  color: #0097a7;
+}
+
+.미수 {
+  color: #fbc02d;
+}
+
+.에픽 {
+  color: #00e676;
+}
+
+.인피니티 {
+  color: #f48fb1;
+}

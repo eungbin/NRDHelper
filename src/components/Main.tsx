@@ -12,7 +12,7 @@ const Main = () => {
         <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <h1>나랜디 도우미</h1>
+            <h1>원하는 종류의 유닛 조합법 보러가기</h1>
           </Grid>
 
           <Grid item xs={1}></Grid>
