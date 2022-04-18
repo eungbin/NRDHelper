@@ -27,6 +27,10 @@
   font-weight: 700;
 }
 
+.menu-item.items {
+  float: right;
+}
+
 .menu-item:hover {
   /* background-color: #cdfff3; */
   background-color: #eeeeee;
