@@ -10,7 +10,7 @@ import { styled } from '@mui/material/styles';
 import CreateTable from './CreateTable';
 import { getUnitNames } from '../libs/totalData';
 
-import { 재료유닛얻기 } from '../libs/GetCraftData';
+import { 재료유닛얻기, 키워드 } from '../libs/GetCraftData';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -119,7 +119,7 @@ const Holding = () => {
 
           {result.names.map((item, index) => {return (
             <Grid key={index} item xs={tableSize}>
-              {item}<br />
+              {item} {키워드(item)}<br />
               <CreateTable units={재료유닛얻기(item)}/>
             </Grid>
           )})}
