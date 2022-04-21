@@ -4,7 +4,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
 import Main from './components/Main';
 import Units from './components/Units';
-import Random from './components/Random';
+import FastCraft from './components/FastCraft';
 
 interface Props {}
 
@@ -16,7 +16,7 @@ const App = ({  }: Props) => {
         <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/units" element={<Units />} />
-            <Route path="/random" element={<Random />} />
+            <Route path="/fast" element={<FastCraft />} />
         </Routes>
       </div>
     </BrowserRouter>

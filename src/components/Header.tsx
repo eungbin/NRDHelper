@@ -18,6 +18,7 @@ const Header = () => {
     <div className="menu">
       <Link to="/"><div className="menu-item home">NRD Helper</div></Link>
       <div className="menu-item items" onClick={openModal}>Developer</div>
+      <Link to="/fast"><div className="menu-item items">Fast High-Tier</div></Link>
       <Modal open={modal} close={closeModal} header="제작자">
         김응빈 (programmer97@naver.com) <br />
         https://github.com/eungbin
