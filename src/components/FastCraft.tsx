@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/FastCraft.css';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import InputTable from './InputTable';
 
 const FastCraft = () => {
   return (
@@ -11,7 +12,9 @@ const FastCraft = () => {
           <Grid item xs={12}>
             <h1>노말/매직으로 보는 가장 빠른 상위유닛</h1>
           </Grid>
-
+          <Grid item xs={12}>
+            <InputTable />
+          </Grid>
         </Grid>
       </Box>
       </div>
