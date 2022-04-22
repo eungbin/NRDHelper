@@ -39,25 +39,25 @@ export default function InputTable({}) {
 
         <tr>
           <td style={{height: "40px"}}>사주</td>
-          <td></td>
+          <td><CustomInput type="number" min="0" max="999" id="unit10" onChange={handleChange} /></td>
           <td>쥬고</td>
-          <td></td>
+          <td><CustomInput type="number" min="0" max="999" id="unit11" onChange={handleChange} /></td>
           <td>오로치</td>
-          <td></td>
+          <td><CustomInput type="number" min="0" max="999" id="unit12" onChange={handleChange} /></td>
           <td>지라</td>
-          <td></td>
+          <td><CustomInput type="number" min="0" max="999" id="unit13" onChange={handleChange} /></td>
           <td>제츠</td>
-          <td></td>
+          <td><CustomInput type="number" min="0" max="999" id="unit14" onChange={handleChange} /></td>
           <td>츠나데</td>
-          <td></td>
+          <td><CustomInput type="number" min="0" max="999" id="unit15" onChange={handleChange} /></td>
           <td>테마리</td>
-          <td></td>
+          <td><CustomInput type="number" min="0" max="999" id="unit16" onChange={handleChange} /></td>
           <td>쵸지</td>
-          <td></td>
+          <td><CustomInput type="number" min="0" max="999" id="unit17" onChange={handleChange} /></td>
           <td>토비</td>
-          <td></td>
+          <td><CustomInput type="number" min="0" max="999" id="unit18" onChange={handleChange} /></td>
           <td>목재</td>
-          <td></td>
+          <td><CustomInput type="number" min="0" max="999" id="unit19" onChange={handleChange} /></td>
         </tr>
 
       </tbody>
