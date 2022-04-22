@@ -1,29 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 
 export default function InputTable({}) {
+  const [units, setUnits] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
+  const handleChange = (e) => {
+    let changeList = units;
+    let index = parseInt((e.target.id).substring(4, 5))-1;
+    changeList[index] = parseInt(e.target.value);
+    setUnits([...changeList]);
+  }
+
   return (
     <CustomTable>
       <tbody>
         <tr>
           <td style={{width: "40px", height: "40px"}}>나루토</td>
-          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" /></td>
+          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" id="unit1" onChange={handleChange} /></td>
           <td style={{width: "40px"}}>사쿠라</td>
-          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" /></td>
+          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" id="unit2" onChange={handleChange} /></td>
           <td style={{width: "40px"}}>사스케</td>
-          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" /></td>
+          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" id="unit3" onChange={handleChange} /></td>
           <td style={{width: "40px"}}>사이</td>
-          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" /></td>
+          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" id="unit4" onChange={handleChange} /></td>
           <td style={{width: "40px"}}>사소리</td>
-          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" /></td>
+          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" id="unit5" onChange={handleChange} /></td>
           <td style={{width: "40px", height: "40px"}}>카린</td>
-          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" /></td>
+          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" id="unit6" onChange={handleChange} /></td>
           <td style={{width: "40px"}}>암부</td>
-          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" /></td>
+          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" id="unit7" onChange={handleChange} /></td>
           <td style={{width: "40px"}}>카부토</td>
-          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" /></td>
+          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" id="unit8" onChange={handleChange} /></td>
           <td style={{width: "40px"}}>야마토</td>
-          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" /></td>
+          <td style={{width: "20px"}}><CustomInput type="number" min="0" max="999" id="unit9" onChange={handleChange} /></td>
           <td style={{width: "40px"}}>-</td>
           <td style={{width: "20px"}}>-</td>
         </tr>
