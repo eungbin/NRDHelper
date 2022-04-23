@@ -54,7 +54,7 @@ const data = (keyword: string) => {
   }
 }
 
-const getAllKeys = (units: string[], arrays: string[]) => {
+export const getAllKeys = (units: string[], arrays: string[]) => {
   for(let unit of units) {
     arrays.push(unit);
   }

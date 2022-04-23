@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
+import { getHighTierPotential } from '../libs/highTierPotential';
 
 export default function InputTable({}) {
   const [units, setUnits] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
