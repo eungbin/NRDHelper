@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
 import { getHighTierPotential } from '../libs/highTierPotential';
+import uniqueUnits from '../data/Unique.json';
 
 export default function InputTable({}) {
-  const [units, setUnits] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+  const [units, setUnits] = useState([1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]);
+  const [high, setHigh] = useState("가아라[유니크]");
+
+  getHighTierPotential(units, high);
 
   const handleChange = (e) => {
     let changeList = units;

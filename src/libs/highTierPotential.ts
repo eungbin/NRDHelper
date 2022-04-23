@@ -11,13 +11,19 @@ import { 재료유닛얻기 } from './GetCraftData';
 
 export const getHighTierPotential = (units, highUnit) => {
   const material = 재료유닛얻기(highUnit);
-  const totalMaterial = highUnit.reduce((acc, cur) => {
+  const totalMaterial: number = material.reduce((acc, cur) => {
     return acc + cur;
   })
 
-  console.log(totalMaterial);
+  let lackUnit: number = 0;
 
-  // for(let i=0; i<units.length; i++) {
-    
-  // }
+  for(let i=0; i<units.length; i++) {
+    if(units[i] < material[i]) {
+      lackUnit += material[i] - units[i];
+    }
+  }
+
+  let potential = (totalMaterial-lackUnit)/totalMaterial*100;
+
+  console.log(potential);
 }
