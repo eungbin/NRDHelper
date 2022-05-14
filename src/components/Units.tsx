@@ -54,6 +54,7 @@ const Holding = () => {
     names: unitNames,
   });
 
+  // debouce 적용
   const delayedGetSize = useRef(_.debounce(() => getSize(), 500)).current;
 
   const setSize = () => {
@@ -98,12 +99,17 @@ const Holding = () => {
     setSize();
   }, []);
 
+  // debounce 적용
+  const delayedSearch = useRef(_.debounce((keyword: string) => changeResult(keyword), 500)).current;
+
   const onChangeSearch = (e) => {
     const keyword = e.target.value;
-    changeResult(keyword);
+    // changeResult(keyword);
+    delayedSearch(keyword);
   }
 
   const changeResult = (keyword) => {
+    console.log(keyword);
     const returnUnits = totalUnits.names.filter(item => {
       if(item.includes(keyword)) return item;
     });
