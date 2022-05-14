@@ -77,8 +77,6 @@ const Holding = () => {
     browserSize.width = window.innerWidth || document.body.clientWidth;
     browserSize.height = window.innerHeight || document.body.clientHeight;
 
-    console.log("사이즈 변경됨!!!(State 변경)");
-
     setSize();
   }
 
@@ -109,7 +107,6 @@ const Holding = () => {
   }
 
   const changeResult = (keyword) => {
-    console.log(keyword);
     const returnUnits = totalUnits.names.filter(item => {
       if(item.includes(keyword)) return item;
     });
