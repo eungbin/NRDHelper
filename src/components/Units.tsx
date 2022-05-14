@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../css/Units.css';
 import Input from './Input';
 import { useLocation } from 'react-router-dom';
@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
+import _ from 'lodash';
 
 import CreateTable from './CreateTable';
 import { getUnitNames } from '../libs/totalData';
@@ -53,6 +54,8 @@ const Holding = () => {
     names: unitNames,
   });
 
+  const delayedGetSize = useRef(_.debounce(() => getSize(), 500)).current;
+
   const setSize = () => {
     if(browserSize.width >= 1600) {
       setTableSize(3);
@@ -73,13 +76,17 @@ const Holding = () => {
     browserSize.width = window.innerWidth || document.body.clientWidth;
     browserSize.height = window.innerHeight || document.body.clientHeight;
 
+    console.log("사이즈 변경됨!!!(State 변경)");
+
     setSize();
   }
 
   useEffect(() => {
-    window.addEventListener('resize', getSize);
+    // window.addEventListener('resize', getSize);
+    window.addEventListener('resize', delayedGetSize);
     return() => {
-      window.removeEventListener('resize', getSize);
+      // window.removeEventListener('resize', getSize);
+      window.removeEventListener('resize', delayedGetSize);
     }
   });
 
